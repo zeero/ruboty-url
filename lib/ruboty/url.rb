@@ -1,8 +1,14 @@
-require "ruboty/url/version"
-require "ruboty/handlers/url"
+require 'active_support'
+require 'active_support/core_ext'
 
 module Ruboty
+  # Ruboty::Url
   module Url
-    # Your code goes here...
+    class << self
+    end
   end
 end
+
+Dir[File.expand_path('url', __dir__) << '/**/*.rb'].each { |file| require file }
+require 'ruboty/handlers/url'
+

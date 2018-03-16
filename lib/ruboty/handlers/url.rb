@@ -1,9 +1,10 @@
-require "ruboty/url/actions/title"
+require 'ruboty/url'
 
 module Ruboty
   module Handlers
+    # url
     class Url < Base
-      on /url title/, name: 'title', description: 'TODO: write your description'
+      on(Regexp.new(ENV['RUBOTY_URL_REGEXP'] || '$^'), name: 'title', description: 'Show html title with specified url.', all: true)
 
       def title(message)
         Ruboty::Url::Actions::Title.new(message).call
