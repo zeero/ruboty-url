@@ -1,4 +1,10 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "ruboty/url"
+require 'minitest/autorun'
+require 'minitest/reporters'
+require 'mocha/mini_test'
 
-require "minitest/autorun"
+require 'ruboty'
+
+require 'ruboty/url'
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
