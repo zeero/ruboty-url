@@ -1,9 +1,18 @@
+require 'ruboty/url'
+
 module Ruboty
   module Url
     module Actions
+      # Ruboty::Url::Actions::Title
       class Title < Ruboty::Actions::Base
         def call
-          message.reply("TODO: write a message.")
+          url = message[0]
+          title = ''
+          open(url) do |f|
+            html = f.read
+            title = html.scan(/<title>(.*?)<\/title>/).flatten.first
+          end
+          message.reply(title, to: nil) unless title.empty?
         end
       end
     end
