@@ -2,7 +2,7 @@
 
 # Ruboty::Url
 
-A Ruboty Handler + Actions to shows HTML title with specified URL..
+A Ruboty Handler + Actions to shows HTML title with specified URL.
 
 [Ruboty](https://github.com/r7kamura/ruboty) is Chat bot framework. Ruby + Bot = Ruboty
 
@@ -20,8 +20,9 @@ And then execute:
 
 ## Usage
 
-Please set 'RUBOTY_URL_REGEXP' environmental variable.
-RegExp for url that you want to show HTML title with.
+Responds with messages including specified URL (such as private URL), and shows HTML title.
+
+Please set 'RUBOTY_URL_REGEXP' environmental variable, value is RegExp for url that you want to show HTML title with.
 
 ex:
 
