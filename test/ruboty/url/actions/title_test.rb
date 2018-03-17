@@ -10,7 +10,7 @@ describe Ruboty::Url::Actions::Title do
 
   describe '#call' do
     let(:url) { 'https://foo/' }
-    let(:title) { 'foo' }
+    let(:title) { "foo's title" }
     let(:ts) { 100 }
 
     it 'should get HTML title' do

@@ -9,8 +9,8 @@ module Ruboty
           url = message[0]
           title = ''
           open(url) do |f|
-            html = f.read
-            title = html.scan(/<title>(.*?)<\/title>/).flatten.first
+            doc = Nokogiri::HTML(f)
+            title = doc.xpath('/html/head/title').text
           end
           attachments = [{
             color: '#0099ff',
