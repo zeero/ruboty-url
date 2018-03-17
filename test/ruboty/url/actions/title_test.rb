@@ -25,7 +25,7 @@ describe Ruboty::Url::Actions::Title do
         title_link: url,
         ts: ts,
       }]
-      mock_message.expects(:reply).with(title, attachments: attachments).once
+      mock_message.expects(:reply).with(attachments: attachments).once
       subject.call
     end
   end

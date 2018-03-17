@@ -18,7 +18,7 @@ module Ruboty
             title_link: url,
             ts: Time.now,
           }]
-          message.reply(title, { attachments: attachments }) unless title.empty?
+          message.reply(attachments: attachments) unless title.empty?
         end
       end
     end
