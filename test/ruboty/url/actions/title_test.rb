@@ -11,19 +11,19 @@ describe Ruboty::Url::Actions::Title do
   describe '#call' do
     let(:url) { 'https://foo/' }
     let(:title) { "foo's title" }
-    let(:ts) { 100 }
+    let(:timestamp) { Time.at(100) }
 
     it 'should get HTML title' do
       # stub
       mock_message.stubs(:[]).with(0).returns(url)
       OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><title>#{title}</title></head></html>"))
-      Time.stubs(:now).returns(ts)
+      Time.stubs(:now).returns(timestamp)
       # mock
       attachments = [{
         color: '#0099ff',
         title: title,
         title_link: url,
-        ts: ts,
+        ts: timestamp.to_i,
       }]
       mock_message.expects(:reply).with(nil, attachments: attachments).once
       subject.call

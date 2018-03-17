@@ -16,7 +16,7 @@ module Ruboty
             color: '#0099ff',
             title: title,
             title_link: url,
-            ts: Time.now,
+            ts: Time.now.to_i,
           }]
           message.reply(nil, attachments: attachments) unless title.empty?
         end
