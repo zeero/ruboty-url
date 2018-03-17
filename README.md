@@ -20,6 +20,8 @@ And then execute:
 
 ## Usage
 
+![screenshot_ruboty-url](https://user-images.githubusercontent.com/105469/37558137-b9e5f8b0-2a52-11e8-93df-530e6547d259.png)
+
 This plugin responds with messages including specified URL (such as private URL), and shows HTML title.
 
 Reply style is Slack attachment. Please use with 'ruboty-slack_rtm' plugin.
