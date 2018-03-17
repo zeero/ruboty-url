@@ -9,13 +9,23 @@ describe Ruboty::Url::Actions::Title do
   end
 
   describe '#call' do
+    let(:url) { 'https://foo/' }
+    let(:title) { 'foo' }
+    let(:ts) { 100 }
+
     it 'should get HTML title' do
       # stub
-      mock_message.stubs(:[]).with(0).returns('https://foo/')
-      OpenURI.stubs(:open_uri).yields(StringIO.new('<html><head><title>foo</title></head></html>'))
-      # StringIO.any_instance.stubs(:read).returns('<html><head><title>foo</title></head></html>')
+      mock_message.stubs(:[]).with(0).returns(url)
+      OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><title>#{title}</title></head></html>"))
+      Time.stubs(:now).returns(ts)
       # mock
-      mock_message.expects(:reply).with('foo', to: nil).once
+      attachments = [{
+        color: '#0099ff',
+        title: title,
+        title_link: url,
+        ts: ts,
+      }]
+      mock_message.expects(:reply).with(title, attachments: attachments).once
       subject.call
     end
   end

@@ -12,7 +12,13 @@ module Ruboty
             html = f.read
             title = html.scan(/<title>(.*?)<\/title>/).flatten.first
           end
-          message.reply(title, to: nil) unless title.empty?
+          attachments = [{
+            color: '#0099ff',
+            title: title,
+            title_link: url,
+            ts: Time.now,
+          }]
+          message.reply(title, { attachments: attachments }) unless title.empty?
         end
       end
     end
