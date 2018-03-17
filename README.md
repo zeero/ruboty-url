@@ -20,14 +20,16 @@ And then execute:
 
 ## Usage
 
-Responds with messages including specified URL (such as private URL), and shows HTML title.
+This plugin responds with messages including specified URL (such as private URL), and shows HTML title.
 
-Please set 'RUBOTY_URL_REGEXP' environmental variable, value is RegExp for url that you want to show HTML title with.
+Reply style is Slack attachment. Please use with 'ruboty-slack_rtm' plugin.
+
+URL is specified by 'RUBOTY_URL_REGEXP' environmental variable, value is RegExp for url that you want to show HTML title with.
 
 ex:
 
 ```
-export RUBOTY_URL_REGEXP=(https://foo.com.*&#124;http://bar.org.*)
+export RUBOTY_URL_REGEXP=(https://foo.com.*|http://bar.org.*)
 ```
 
 ## ENV
