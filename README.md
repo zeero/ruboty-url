@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.org/zeero/ruboty-url.svg?branch=master)](https://travis-ci.org/zeero/ruboty-url)
+
 # Ruboty::Url
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruboty/url`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruboty Handler + Actions to shows HTML title with specified URL..
 
-TODO: Delete this and the text above, and describe your gem
+[Ruboty](https://github.com/r7kamura/ruboty) is Chat bot framework. Ruby + Bot = Ruboty
 
 ## Installation
 
@@ -14,26 +16,36 @@ gem 'ruboty-url'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ruboty-url
+    $ bundle install
 
 ## Usage
 
-TODO: Write usage instructions here
+Please set 'RUBOTY_URL_REGEXP' environmental variable.
+RegExp for url that you want to show HTML title with.
 
-## Development
+ex:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+export RUBOTY_URL_REGEXP=(https://foo.com.*&#124;http://bar.org.*)
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## ENV
+
+|Name|Description|
+|:--|:--|
+|RUBOTY_URL_REGEXP|(required) RegExp for url.|
+
+## Dependency
+
+|Name|Description|
+|:--|:--|
+|ruboty-slack_rtm|(required) 'ruboty-url' is supposed to work with 'ruboty-slack_rtm' - Ruboty Adapter for Slack Realtime API.|
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/zeero/ruboty-url.
+1. Fork it ( https://github.com/zeero/ruboty-url/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
