@@ -21,6 +21,8 @@ And then execute:
 ## Usage
 
 <img width="773" alt="screenshot_ruboty-url" src="https://user-images.githubusercontent.com/105469/37564163-a3ef0bba-2ad3-11e8-886e-58f4c8d73957.png">
+[![Gem Version](https://badge.fury.io/rb/ruboty-url.svg)](https://badge.fury.io/rb/ruboty-url)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.txt)
 
 This plugin responds with messages including specified URL (such as private URL), and shows HTML title.
 
