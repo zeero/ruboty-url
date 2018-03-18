@@ -18,7 +18,7 @@ describe Ruboty::Url::Actions::Title do
       OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><title>#{title}</title></head></html>"))
       # mock
       attachments = [{
-        color: '#EEEEEE',
+        color: '#E2E2E2',
         title_link: url,
         title: title,
       }]
@@ -35,10 +35,10 @@ describe Ruboty::Url::Actions::Title do
     it 'should get optional infos' do
       # stub
       mock_message.stubs(:[]).with(0).returns(url)
-      OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><meta property=\"og:image\" content=\"#{og_image}\" /><meta property=\"og:site_name\" content=\"#{og_site_name}\" /><meta property=\"og:type\" content=\"object\" /><meta property=\"og:title\" content=\"#{og_title}\" /><meta property=\"og:url\" content=\"https://github.com/zeero/ruboty-url\" /><meta property=\"og:description\" content=\"#{og_description}\" /><title>#{title}</title><link rel=\"icon\" type=\"image/x-icon\" class=\"js-site-favicon\" href=\"#{favicon_url}\"></head></html>"))
+      OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><meta property=\"og:image\" content=\"#{og_image}\" /><meta property=\"og:site_name\" content=\"#{og_site_name}\" /><meta property=\"og:type\" content=\"object\" /><meta property=\"og:title\" content=\"#{og_title}\" /><meta property=\"og:url\" content=\"https://github.com/zeero/ruboty-url\" /><meta property=\"og:description\" content=\"#{og_description}\" /><title>#{title}</title><link rel=\"icon\" type=\"image/x-icon\" class=\"js-site-favicon\" href=\"#{favicon_url}\"><link rel=\"icon\" type=\"image/x-icon\" class=\"js-site-favicon\" href=\"#{favicon_url}/dummy\"></head></html>"))
       # mock
       attachments = [{
-        color: '#EEEEEE',
+        color: '#E2E2E2',
         title_link: url,
         title: og_title,
         author_name: og_site_name,

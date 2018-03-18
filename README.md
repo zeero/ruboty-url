@@ -20,7 +20,7 @@ And then execute:
 
 ## Usage
 
-<img width="675" alt="screenshot_ruboty-url" src="https://user-images.githubusercontent.com/105469/37563621-4c825b30-2ac8-11e8-917a-480b5ce74908.png">
+<img width="773" alt="screenshot_ruboty-url" src="https://user-images.githubusercontent.com/105469/37564163-a3ef0bba-2ad3-11e8-886e-58f4c8d73957.png">
 
 This plugin responds with messages including specified URL (such as private URL), and shows HTML title.
 
