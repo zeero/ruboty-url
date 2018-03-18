@@ -13,11 +13,14 @@ module Ruboty
           }
           open(url) do |f|
             html = Nokogiri::HTML(f)
-            attachment[:title] = html.xpath('/html/head/title').text
+            title = html.xpath('/html/head/title').text
+
+            # guard slack_rtm
+            return message.reply(title) unless Ruboty.const_defined? 'Adapters::SlackRTM'
 
             # optional infos
             og_title = html.xpath('/html/head/meta[@property="og:title"]/@content').first
-            attachment[:title] = og_title.text if og_title.present?
+            attachment[:title] = og_title.present? ? og_title.text : title
             og_site_name = html.xpath('/html/head/meta[@property="og:site_name"]/@content').first
             attachment[:author_name] = og_site_name.text if og_site_name.present?
             favicon_url = html.xpath('/html/head/link[@rel="icon"]/@href').first

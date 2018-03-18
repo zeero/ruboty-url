@@ -26,8 +26,6 @@ And then execute:
 
 This plugin responds with messages including specified URL (such as private URL), and shows HTML title.
 
-Reply style is Slack attachment. Please use with 'ruboty-slack_rtm' plugin.
-
 URL is specified by 'RUBOTY_URL_REGEXP' environmental variable, value is RegExp for url that you want to show HTML title with.
 
 ex:
@@ -35,6 +33,8 @@ ex:
 ```
 export RUBOTY_URL_REGEXP=(https://foo.com.*|http://bar.org.*)
 ```
+
+When you use with 'ruboty-slack_rtm' plugin, Ruboty can reply by Slack attachment style.
 
 ## ENV
 
@@ -46,7 +46,7 @@ export RUBOTY_URL_REGEXP=(https://foo.com.*|http://bar.org.*)
 
 |Name|Description|
 |:--|:--|
-|ruboty-slack_rtm|(required) 'ruboty-url' is supposed to work with 'ruboty-slack_rtm' - Ruboty Adapter for Slack Realtime API.|
+|ruboty-slack_rtm|(recommended) Ruboty Adapter for Slack Realtime API.|
 
 ## Contributing
 
