@@ -18,7 +18,7 @@ describe Ruboty::Url::Actions::Title do
       OpenURI.stubs(:open_uri).yields(StringIO.new("<html><head><title>#{title}</title></head></html>"))
       # mock
       attachments = [{
-        color: '#0099ff',
+        color: '#EEEEEE',
         title: title,
         title_link: url,
       }]

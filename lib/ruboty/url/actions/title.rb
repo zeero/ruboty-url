@@ -13,7 +13,7 @@ module Ruboty
             title = doc.xpath('/html/head/title').text
           end
           attachments = [{
-            color: '#0099ff',
+            color: '#EEEEEE',
             title: title,
             title_link: url,
           }]
